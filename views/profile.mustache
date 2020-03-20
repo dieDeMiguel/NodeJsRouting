@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Profile</title>
+</head>
+<body class="container">
+     <span>{{timestamp}}</span>
+    <h1 class="name"> Name: {{ name }}</h1><br>
+    <h1  class="name">Company: {{ company }}</h1><br>
+    <img class="profileImage" src="{{ image }}" alt="image">
+    <h3>Languages</h3>
+    <ol>
+        {{#languages}}
+            <li>{{.}}</li>
+        {{/languages}}
+    </ol>
+
+    <form action="/addprofile" method="POST">
+        <input type="text" name="name" id="name" placeholder="name"><br>
+        <input type="text" name="username" id="username" placeholder="username"><br>
+        <input type="text" name="image" id="image" placeholder='Image (/images/example.jpg'><br>
+        <input type="text" name="company" id="comany" placeholder="company"><br>
+        <input type="text" name="languages" id="languages" placeholder="languages"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
